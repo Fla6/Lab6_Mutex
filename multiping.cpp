@@ -1,7 +1,7 @@
 #include <iostream>
 #include <unistd.h>
 #include <fstream>
-#include "pingp.h"
+#include "ping.h"
 #include <pthread.h>
 using namespace std;
 

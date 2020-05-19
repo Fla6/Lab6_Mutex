@@ -1,4 +1,4 @@
-from pingp import ipping
+from pingm import ipping
 import os, logging, threading, time
 
 if __name__ == "__main__":
@@ -22,4 +22,3 @@ if __name__ == "__main__":
 
     for x in thread:
         x.join()
-        

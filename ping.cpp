@@ -1,6 +1,6 @@
 #include <iostream>
 #include <pthread.h>
-#include "pingp.h"
+#include "ping.h"
 #include <unistd.h>
 using namespace std;
 
