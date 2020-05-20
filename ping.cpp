@@ -9,10 +9,9 @@ char host[BUFF_LEN] = { 0, };
 
 void * thread_func(void * arg)
 {
-    pthread_mutex_lock(&mutex);
-    cout << "Thread " << pthread_self() << " work" << endl << endl;
     ping(host);
-    cout << endl << "Thread " << pthread_self() << " done" << endl;
+    pthread_mutex_lock(&mutex);
+    cout << "Thread " << pthread_self() << " work" << endl  << "Thread " << pthread_self() << " done" << endl;
     pthread_mutex_unlock(&mutex);
     return NULL;
     

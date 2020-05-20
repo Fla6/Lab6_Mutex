@@ -3,6 +3,8 @@
 #include <fstream>
 #include "ping.h"
 #include <pthread.h>
+// #include <thread>
+// #include <chrono>
 using namespace std;
 
 pthread_mutex_t mutex;
@@ -10,10 +12,10 @@ char host[BUFF_LEN] = { 0, };
 
 void * thread_func(void * arg)
 {
-    pthread_mutex_lock(&mutex);
-    cout << "Thread " << pthread_self() << " work" << "\n";
     ping(host);
-    cout << "Thread " << pthread_self() << " done" << endl << "\n";
+    //this_thread::sleep_for(chrono::seconds(30));
+    pthread_mutex_lock(&mutex);
+    cout << "Thread " << pthread_self() << " work" << "\n" << "Thread " << pthread_self() << " done" << endl << "\n";
     pthread_mutex_unlock(&mutex);
     return NULL;
 }

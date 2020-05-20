@@ -4,9 +4,9 @@ mutex = threading.Lock()
 
 def ipping (ip):
     #logging.info("Process {} starting".format(os.getpid()))
+    os.system('nmap -sP {}'.format(ip))
     mutex.acquire()
     logging.info("Thread {} starting".format(threading.current_thread().ident))
-    os.system('nmap -sP {}'.format(ip))
     logging.info("Thread {} done".format(threading.current_thread().ident))
     mutex.release()
     #logging.info("Process {} done".format(os.getpid()))
